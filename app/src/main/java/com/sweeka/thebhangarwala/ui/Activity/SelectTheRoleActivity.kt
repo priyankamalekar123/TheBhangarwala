@@ -1,9 +1,11 @@
-package com.sweeka.thebhangarwala
+package com.sweeka.thebhangarwala.ui.Activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
+import com.sweeka.thebhangarwala.R
+//import com.sweeka.thebhangarwala.VendorLoginActivity
 
 class SelectTheRoleActivity : AppCompatActivity() {
 
@@ -14,7 +16,7 @@ class SelectTheRoleActivity : AppCompatActivity() {
         setContentView(R.layout.activity_select_the_role2)
 
         user = findViewById(R.id.user)
-        admin = findViewById(R.id.admin)
+        admin = findViewById(R.id.vendor)
 
         user.setOnClickListener {
             var i  = Intent(this,MainActivity::class.java)
@@ -22,7 +24,7 @@ class SelectTheRoleActivity : AppCompatActivity() {
         }
 
         admin.setOnClickListener {
-            var i = Intent(this,VendorLoginActivity::class.java)
+            var i = Intent(this, VendorLoginActivity::class.java)
             startActivity(i)
         }
     }

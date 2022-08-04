@@ -1,4 +1,4 @@
-package com.sweeka.thebhangarwala
+package com.sweeka.thebhangarwala.ui.Activity
 
 import android.content.Intent
 import android.content.pm.ActivityInfo
@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.os.Handler
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import com.sweeka.thebhangarwala.R
+import com.sweeka.thebhangarwala.ui.Activity.AppIntroActivity
 
 class SplashScreenActivity : AppCompatActivity() {
 

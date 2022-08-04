@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.sweeka.thebhangarwala">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -11,33 +14,34 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:allowClearUserData="true"
         android:theme="@style/Theme.TestApp"
         tools:targetApi="31">
         <activity
-            android:name=".ProductListActivity"
+            android:name=".ui.Activity.ProductListActivity"
             android:exported="false" />
         <activity
-            android:name=".CartActivity"
+            android:name=".ui.Activity.CartActivity"
             android:exported="false" />
         <activity
-            android:name=".VendorLoginActivity"
+            android:name=".ui.Activity.VendorLoginActivity"
             android:exported="false" />
         <activity
-            android:name=".SelectTheRoleActivity"
+            android:name=".ui.Activity.SelectTheRoleActivity"
             android:exported="false"
             android:label="@string/title_activity_select_the_role"
             android:theme="@style/Theme.TestApp.NoActionBar" />
         <activity
-            android:name=".AppIntroActivity"
+            android:name=".ui.Activity.AppIntroActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.Activity.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".BaseActivity"
+            android:name=".ui.Activity.BaseActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".ui.Activity.SplashScreenActivity"
             android:exported="true"
             android:theme="@style/SplashScreen">
             <intent-filter>

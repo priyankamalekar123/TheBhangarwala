@@ -1,17 +1,26 @@
-package com.sweeka.thebhangarwala
+package com.sweeka.thebhangarwala.ui.Activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.MenuItemCompat
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.sweeka.thebhangarwala.R
+import com.sweeka.thebhangarwala.ui.fragment.CitiesFragment
+import com.sweeka.thebhangarwala.ui.fragment.HistoryFragment
+import com.sweeka.thebhangarwala.ui.fragment.HomeFragment
 
 class MainActivity : AppCompatActivity() {
     lateinit var bottomNavigationView: BottomNavigationView
+    lateinit var textCartItemCount:TextView
+    var mCartItemCount = 10
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -28,11 +37,47 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+        //creating request parameters
+        val params = HashMap<String, String>()
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
          menuInflater.inflate(R.menu.appbarmenu,menu)
-        return super.onCreateOptionsMenu(menu)
+
+        val menuItem = menu.findItem(R.id.cart)
+
+        val actionView = MenuItemCompat.getActionView(menuItem)
+
+//        textCartItemCount = actionView.findViewById<View>(R.id.cart_badge) as TextView
+
+//        setupBadge()
+
+//        actionView.setOnClickListener { onOptionsItemSelected(menuItem) }
+        return true
+    }
+
+    private fun setupBadge() {
+        if (textCartItemCount != null) {
+            if (mCartItemCount == 0) {
+                if (textCartItemCount.visibility != View.GONE) {
+                    textCartItemCount.visibility = View.GONE
+                }
+            } else {
+//                val sc = Selected()
+                val getdetails: ArrayList<HashMap<String, String>>
+                var qnty = 0
+//                getdetails = sc.getGetDetails()
+//                for (i in getdetails.indices) {
+//                    val data1 = getdetails[i]
+//                    qnty = qnty + data1["q1"]!!.toInt()
+//                }
+                textCartItemCount.text = qnty.toString()
+                if (textCartItemCount.visibility != View.VISIBLE) {
+                    textCartItemCount.visibility = View.VISIBLE
+                }
+            }
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
