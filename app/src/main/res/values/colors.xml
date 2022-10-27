@@ -12,7 +12,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="limegreen">#32CD32</color>
     <color name="limegreen1">#7CFB7C</color>
-    <color name="silver">#c0c0c0</color>
 
     <!-- dots active colors -->
     <color name="dot_active_screen1">#f9c772</color>

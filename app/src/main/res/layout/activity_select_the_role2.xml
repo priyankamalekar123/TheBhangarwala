@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.Activity.SelectTheRoleActivity">
+    tools:context=".SelectTheRoleActivity">
 
   <TextView
       android:id="@+id/textView"
@@ -45,7 +45,7 @@
 
 
   <ImageButton
-      android:id="@+id/vendor"
+      android:id="@+id/admin"
       android:layout_below="@id/textView1"
       android:layout_gravity="center"
       android:foregroundGravity="center"
@@ -63,38 +63,11 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_centerHorizontal="true"
-      android:layout_below="@id/vendor"
+      android:layout_below="@id/admin"
       android:layout_marginTop="5dp"
       android:text="Vendor"
       android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
       android:textColor="@color/colorPrimary" />
-
-  <ImageButton
-      android:id="@+id/admin"
-      android:layout_below="@id/textView2"
-      android:layout_gravity="center"
-      android:foregroundGravity="center"
-      android:layout_centerInParent="true"
-      android:src="@drawable/admin"
-      android:layout_marginTop="40dp"
-      android:scaleType="fitXY"
-      android:background="@null"
-      android:layout_width="100dip"
-      android:layout_height="100dip">
-
-  </ImageButton>
-
-  <TextView
-      android:id="@+id/textView3"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_centerHorizontal="true"
-      android:layout_below="@id/admin"
-      android:layout_marginTop="5dp"
-      android:text="Admin"
-      android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
-      android:textColor="@color/colorPrimary" />
-
 
 
 

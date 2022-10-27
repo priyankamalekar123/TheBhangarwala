@@ -1,9 +1,10 @@
-package com.sweeka.thebhangarwala.ui.Activity
+package com.sweeka.thebhangarwala
 
 import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,13 +15,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
 import androidx.viewpager.widget.ViewPager.OnPageChangeListener
-import com.sweeka.thebhangarwala.PreferenceManager
-import com.sweeka.thebhangarwala.R
-//import com.sweeka.thebhangarwala.SelectTheRoleActivity
 
 class AppIntroActivity : AppCompatActivity() {
 
-    lateinit var prefManager: PreferenceManager
+    lateinit var prefManager:PreferenceManager
     lateinit var btnskip:Button
     lateinit var btnNext:Button
     lateinit var layout:ArrayList<Int>
@@ -49,13 +47,13 @@ class AppIntroActivity : AppCompatActivity() {
         btnskip = findViewById(R.id.btn_skip)
         btnNext = findViewById(R.id.btn_next)
 
-        layout = arrayListOf(R.layout.layout_slide1, R.layout.layout_slide2, R.layout.layout_slide3)
-        dotText = arrayListOf(findViewById(R.id.indicator1),findViewById(R.id.indicator2),findViewById(
-            R.id.indicator3))
+        layout = arrayListOf(R.layout.layout_slide1,R.layout.layout_slide2,R.layout.layout_slide3)
+        dotText = arrayListOf(findViewById(R.id.indicator1),findViewById(R.id.indicator2),findViewById(R.id.indicator3))
 
         myViewpagerAdapetr = MyViewpagerAdapeter()
         viewPager.adapter = myViewpagerAdapetr
         viewPager.addOnPageChangeListener(viewPagerPageChangeListener)
+
 
         btnskip.setOnClickListener {
 
@@ -138,7 +136,7 @@ class AppIntroActivity : AppCompatActivity() {
 
     fun launchHomeScreen(){
         prefManager.setFirstTimeLaunch(false)
-       var i = Intent(this, SelectTheRoleActivity::class.java)
+       var i = Intent(this,SelectTheRoleActivity::class.java)
         startActivity(i)
         finish()
     }
