@@ -25,7 +25,6 @@ class PreferenceManager {
         pref = _context!!.getSharedPreferences(PREF_NAME, PRIVATE_MODE)
         editor = pref?.edit()
     }
-
    fun setFirstTimeLaunch(isFirstTimeLaunch:Boolean){
        editor?.putBoolean(IS_FIRST_TIME_LAUNCH,isFirstTimeLaunch)
        editor?.commit()

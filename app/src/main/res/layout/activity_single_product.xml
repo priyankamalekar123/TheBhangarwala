@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewmodel1"
+            type="com.sweeka.thebhangarwala.ui.viewmodels.SingleProductViewModel" />
+
+        <variable
+            name="binder"
+            type="com.sweeka.thebhangarwala.viewBinder.SingleProductBinder" />
+
+<!--        <variable-->
+<!--            name="handler"-->
+<!--            type="com.sweeka.thebhangarwala.ui.Activity.SingleProductActivity.ClickHandler" />-->
+
+        <import type="android.view.View"/>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.Activity.SingleProductActivity"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/img_item"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="24dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/user_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.900"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="200dp"
+            android:layout_marginBottom="30dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.500"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_item">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:background="@drawable/main_activity_background"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/item_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:text="@={binder.item_name}"
+                    tools:text = "name"
+                    android:textSize="40dp"
+                    android:textColor = "@color/white"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/grey1"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Amount Per Kg"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/amount_per_kg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@={binder.amount_per_kg}"
+                        android:textSize="30dp" />
+
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:visibility = "@{binder.isItemPresent()?  View.GONE : View.VISIBLE }"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/grey1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        >
+                        <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="20dp"
+                        android:gravity="center"
+                        android:text="Quantity Of Items :" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_weight="2"
+
+                        >
+
+                        <Button
+                            android:id="@+id/minusBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="20dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/rounded_btn"
+                            android:gravity="center"
+                            android:onClick="@{() -> viewmodel1.minusBtnClick()}"
+                            android:text="-"
+                            android:textSize="40dp" />
+
+                        <TextView
+                            android:id="@+id/quantity_of_items"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="3"
+                            android:gravity="center"
+                            android:text="@={binder.quantity_of_item}"
+                            tools:text ="10 kg"
+                            android:textSize="30dp" />
+
+                        <Button
+                            android:id="@+id/plusBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="20dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/rounded_btn"
+                            android:gravity="center"
+                            android:onClick="@{() -> viewmodel1.plusBtnClick()}"
+                            android:text="+"
+                            android:textSize="40dp" />
+
+                    </LinearLayout>
+
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/grey1"
+                    android:visibility = "@{binder.isItemPresent()?  View.GONE : View.VISIBLE }"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Total Amount"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/total_amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@={binder.total_amount}"
+                        tools:text ="100 kg"
+                        android:textSize="30dp" />
+
+
+                </LinearLayout>
+
+
+                                <Button
+                                    android:id="@+id/addToCard"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_weight="1"
+                                    android:layout_gravity="center"
+                                    android:visibility = "@{binder.isItemPresent()?  View.GONE : View.VISIBLE }"
+                                    android:background="@drawable/rounded_resourse"
+                                    android:onClick="@{() -> viewmodel1.addToCart()}"
+                                    android:text="Add To Cart"
+                                    android:textSize="20dp" />
+
+                                <Button
+                                    android:id="@+id/goToCart"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_weight="1"
+                                    android:layout_gravity="center"
+                                    android:background="@drawable/rounded_resourse"
+                                    android:visibility = "@{binder.isItemPresent()?  View.VISIBLE : View.GONE }"
+                                    android:text="Go To Cart"
+                                    android:textSize="20dp" />
+                <!--android:onClick="@{handler::gotoNextActivity}"-->
+                <!--android:onClick="@{() -> viewmodel1.gotoNextAct()}"-->
+                </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
