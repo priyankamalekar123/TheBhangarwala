@@ -6,8 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
-import android.widget.ImageView
-import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import com.sweeka.thebhangarwala.R
 import com.sweeka.thebhangarwala.ui.Activity.ProductListActivity
@@ -20,12 +18,12 @@ class HomeFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
-    lateinit var PAPER:LinearLayout
-    lateinit var BOTTLES:LinearLayout
-    lateinit var METALS:LinearLayout
-    lateinit var COMPUTER:LinearLayout
-    lateinit var BOOKS:LinearLayout
-    lateinit var OLD_ITEM:LinearLayout
+    lateinit var PAPER:ImageButton
+    lateinit var BOTTLES:ImageButton
+    lateinit var METALS:ImageButton
+    lateinit var COMPUTER:ImageButton
+    lateinit var BOOKS:ImageButton
+    lateinit var OLD_ITEM:ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,7 +52,7 @@ class HomeFragment : Fragment() {
 
         PAPER.setOnClickListener {
            var i = Intent(activity, ProductListActivity::class.java)
-            i.putExtra("categories","papers")
+            i.putExtra("categories","paper")
             startActivity(i)
         }
         BOTTLES.setOnClickListener {
@@ -64,7 +62,7 @@ class HomeFragment : Fragment() {
         }
         METALS.setOnClickListener {
             var i = Intent(activity,ProductListActivity::class.java)
-            i.putExtra("categories","metal")
+            i.putExtra("categories","metals")
             startActivity(i)
         }
         COMPUTER.setOnClickListener {
@@ -79,7 +77,7 @@ class HomeFragment : Fragment() {
         }
         OLD_ITEM.setOnClickListener {
             var i = Intent(activity,ProductListActivity::class.java)
-            i.putExtra("categories","olditems")
+            i.putExtra("categories","old_item")
             startActivity(i)
         }
     }

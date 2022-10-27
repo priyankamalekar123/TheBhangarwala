@@ -1,10 +1,7 @@
 package com.sweeka.thebhangarwala.api
 
-import android.app.Application
 import android.content.Context
 import com.google.gson.GsonBuilder
-import com.sweeka.thebhangarwala.ui.Activity.ProductListActivity
-import com.sweeka.thebhangarwala.ui.viewmodels.ProductListViewModel
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -12,7 +9,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-class RetrofitClientObj(context: Application) {
+class RetrofitClientObj(context: Context) {
 
     private val BASE_URL = "http://gravityclasses.co.in/bhangarwala/"
 
@@ -38,6 +35,8 @@ class RetrofitClientObj(context: Application) {
 
 
     val instance : RetrofitService by lazy {
+
+
 
         val retrofit = Retrofit.Builder()
             .baseUrl(BASE_URL)

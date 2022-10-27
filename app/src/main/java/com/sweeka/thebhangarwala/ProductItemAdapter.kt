@@ -1,32 +1,26 @@
 package com.sweeka.thebhangarwala
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.sweeka.thebhangarwala.db.DataModels.Product
-import com.sweeka.thebhangarwala.ui.interfaces.recycleViewCallback
 
-class ProductItemAdapter(var context: Context,var recycleViewCallback: recycleViewCallback):RecyclerView.Adapter<ProductItemAdapter.ViewHolder>() {
+class ProductItemAdapter(/*private var ProductList:ArrayList<String>*/):RecyclerView.Adapter<ProductItemAdapter.ViewHolder>() {
 
-      private var ProductList = ArrayList<Product>()
+      private var ProductList = ArrayList<String>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         var view = LayoutInflater.from(parent.context).inflate(R.layout.item_view_layout,parent,false)
 
-        return ViewHolder(view,recycleViewCallback)
+        return ViewHolder(view)
 
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         var data = ProductList[position]
-        holder.product_name.text = data.item_name
-        Glide.with(context).load(data.image).into(holder.product_img)
-
-
+        holder.product_name.text = data
 
     }
 
@@ -34,20 +28,15 @@ class ProductItemAdapter(var context: Context,var recycleViewCallback: recycleVi
         return ProductList.size
     }
 
-     fun setProductList(productList: ArrayList<Product>){
-         ProductList.addAll(productList)
+     fun setProductList(productList:ArrayList<String>){
+         ProductList = productList
          notifyDataSetChanged()
      }
 
-    class ViewHolder(ItemView: View,recycleViewCallback:recycleViewCallback):RecyclerView.ViewHolder(ItemView){
-         var product_img = ItemView.findViewById<ImageView>(R.id.single_imageView)
-         var product_name = ItemView.findViewById<TextView>(R.id.single_textView)
-
-        init {
-            ItemView.setOnClickListener {
-                recycleViewCallback.onClick(adapterPosition)
-            }
-        }
-
+    class ViewHolder(ItemView: View):RecyclerView.ViewHolder(ItemView){
+         var product_img = ItemView.findViewById<ImageView>(R.id.imageView)
+         var checkbox = ItemView.findViewById<CheckBox>(R.id.checkbox)
+         var product_name = ItemView.findViewById<TextView>(R.id.textView)
+         var rupees = ItemView.findViewById<TextView>(R.id.price)
     }
 }

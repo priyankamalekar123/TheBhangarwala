@@ -2,56 +2,82 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     >
 
     <androidx.cardview.widget.CardView
         android:id="@+id/relativeLayout"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:cardElevation="6dp"
-        app:cardCornerRadius="12dp"
-       >
+        app:cardMaxElevation="8dp"
+        app:cardUseCompatPadding="true"
+        >
 
-        <LinearLayout
-            android:id="@+id/linearlayout"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="80dp"
-            android:orientation="horizontal"
-            android:background="@drawable/main_activity_background"
-            android:layout_margin="8dp">
-
-            <ImageView
-                 android:id="@+id/single_imageView"
-                 android:layout_width="wrap_content"
-                 android:layout_height="match_parent"
-                 android:layout_weight ="1"
-                 android:layout_gravity="center"
-                 android:scaleType="fitXY"
-                android:layout_margin="8dp"
-                 />
+            android:background="@color/silver">
 
             <TextView
-                android:id="@+id/single_textView"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight ="3"
-                android:gravity = "center"
-                android:text = "center"
-                android:textColor = "@color/white"
-                android:textSize="20sp"
-                android:layout_margin="8dp"
+                android:id="@+id/blank"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="Icon"
+                android:foregroundGravity="center"
+                android:scaleType="fitXY"
+                android:src="@drawable/admin"
                 />
 
+            <CheckBox android:id="@+id/checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/imageView"
+                android:buttonTint="@color/cardview_dark_background"
+                android:layout_centerVertical="true"
+                android:onClick="onCheckboxClicked"/>
 
-                </LinearLayout>
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/checkbox"
+                android:layout_toRightOf="@id/checkbox"
+                android:gravity="center_vertical"
+                android:text="Hiii"
+                android:layout_centerVertical="true"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textView"
+                android:layout_toRightOf="@id/checkbox"
+                android:layout_marginTop="10dp"
+                android:text="₹ price"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="12sp"/>
+
+        </RelativeLayout>
 
 
 
-            </androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/silver"/>
 
 
-        </LinearLayout>
+</LinearLayout>
