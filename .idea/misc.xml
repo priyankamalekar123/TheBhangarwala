@@ -1,39 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DesignSurface">
-    <option name="filePathToZoomLevelMap">
-      <map>
-        <entry key="..\:/Android Project/TestApp/app/src/main/res/drawable/circular.xml" value="0.129" />
-        <entry key="..\:/Android Project/TestApp/app/src/main/res/drawable/circular_user.xml" value="0.129" />
-        <entry key="..\:/Android Project/TestApp/app/src/main/res/drawable/home_icon.xml" value="0.1" />
-        <entry key="..\:/Android Project/TestApp/app/src/main/res/drawable/ic_user.xml" value="0.1205" />
-        <entry key="..\:/Android Project/TestApp/app/src/main/res/drawable/linear_shape1.xml" value="0.129" />
-        <entry key="..\:/Android Project/TestApp/app/src/main/res/drawable/linear_shape2.xml" value="0.129" />
-        <entry key="..\:/Android Project/TestApp/app/src/main/res/drawable/main_activity_background.xml" value="0.1" />
-        <entry key="..\:/Android Project/TestApp/app/src/main/res/drawable/rounded_btn.xml" value="0.1835" />
-        <entry key="..\:/Android Project/TestApp/app/src/main/res/drawable/rounded_image.xml" value="0.1" />
-        <entry key="..\:/Android Project/TestApp/app/src/main/res/drawable/rounded_resourse.xml" value="0.1205" />
-        <entry key="..\:/Android Project/TestApp/app/src/main/res/drawable/select_role_background.xml" value="0.129" />
-        <entry key="..\:/Android Project/TestApp/app/src/main/res/layout/activity_added_product.xml" value="0.10208333333333333" />
-        <entry key="..\:/Android Project/TestApp/app/src/main/res/layout/activity_admin_login.xml" value="0.20416666666666666" />
-        <entry key="..\:/Android Project/TestApp/app/src/main/res/layout/activity_app_intro.xml" value="0.1" />
-        <entry key="..\:/Android Project/TestApp/app/src/main/res/layout/activity_base.xml" value="0.20416666666666666" />
-        <entry key="..\:/Android Project/TestApp/app/src/main/res/layout/activity_cart.xml" value="0.17447916666666666" />
-        <entry key="..\:/Android Project/TestApp/app/src/main/res/layout/activity_go_to_cart.xml" value="0.12447916666666667" />
-        <entry key="..\:/Android Project/TestApp/app/src/main/res/layout/activity_main.xml" value="0.15" />
-        <entry key="..\:/Android Project/TestApp/app/src/main/res/layout/activity_product_list.xml" value="0.16822916666666668" />
-        <entry key="..\:/Android Project/TestApp/app/src/main/res/layout/activity_select_the_role2.xml" value="0.2" />
-        <entry key="..\:/Android Project/TestApp/app/src/main/res/layout/activity_single_product.xml" value="0.1111111111111111" />
-        <entry key="..\:/Android Project/TestApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
-        <entry key="..\:/Android Project/TestApp/app/src/main/res/layout/added_product_item_viewlayout.xml" value="0.33" />
-        <entry key="..\:/Android Project/TestApp/app/src/main/res/layout/badge_layout.xml" value="1.25" />
-        <entry key="..\:/Android Project/TestApp/app/src/main/res/layout/fragment_home.xml" value="0.22" />
-        <entry key="..\:/Android Project/TestApp/app/src/main/res/layout/item_view_layout.xml" value="0.3148148148148148" />
-        <entry key="..\:/Android Project/TestApp/app/src/main/res/menu/appbarmenu.xml" value="0.15572916666666667" />
-        <entry key="..\:/Android Project/TestApp/app/src/main/res/menu/bottomnav.xml" value="0.14375" />
-      </map>
-    </option>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
-  <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
 </project>
